@@ -15,6 +15,11 @@ class MyApp < Sinatra::Base
     "key value page is #{key}: #{value}"
   end
 
+  get '/get' do
+    value = session[params[:key]]
+    "stored value: #{value}"
+  end
+  
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
