@@ -15,4 +15,10 @@ feature "storing temporary variables" do
     visit '/set?somekey=somevalue'
     expect(page).to have_content 'somekey: somevalue'
   end
+
+  scenario "values are able to be returned" do 
+    visit '/set?somekey=somevalue'
+    visit '/get?key=somekey'
+    expect(page).to have_content 'stored value: somevalue'
+  end
 end
