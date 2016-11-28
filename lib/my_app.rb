@@ -1,8 +1,10 @@
 require 'sinatra/base'
 
 class MyApp < Sinatra::Base
+  set :port, 4000
+
   get '/' do
-    'Hello MyApp!'
+    'this proves the homepage is on the custom port'
   end
 
   # start the server if ruby file executed directly
